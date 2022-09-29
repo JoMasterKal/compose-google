@@ -16,3 +16,4 @@ rootProject.name = "Compose Google"
 include ':app'
 include ':taskmanager'
 include ':quadrant'
+include ':mybusinesscard'
