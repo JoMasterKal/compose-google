@@ -10,7 +10,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -42,17 +42,34 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun SpaceApp() {
 
+    var imageId by remember{ mutableStateOf(1)}
+    var textseting by remember { mutableStateOf("")}
+
+    val imgToChange =  when(imageId) {
+        1 -> R.drawable.mammy
+        2 -> R.drawable.jokalmammy
+        3 -> R.drawable.kalongas
+        else -> R.drawable.mammy
+    }
+
+    val textToChange =  when(imageId) {
+        1 -> "Le repos de mon coeur"
+        2 -> "Avec ma belle mere"
+        3 -> "les kalonga, la joie d'etre"
+        else -> "le repos de mon coeur"
+    }
+
     Column(verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(16.dp)
+        modifier = Modifier.padding(16.dp).fillMaxSize()
     ) { 
-        Surface(modifier = Modifier
+        Surface(modifier = Modifier.weight(2f)
             .border(4.dp, color = Color.Gray, shape = RectangleShape),
             elevation = 4.dp
         ) {
 
             Image(
-                painter = painterResource(id = R.drawable.mammy),
+                painter = painterResource(imgToChange),
                 contentDescription = "this is my best picture",
                 modifier = Modifier.padding(24.dp)
             )
@@ -60,11 +77,11 @@ fun SpaceApp() {
         
         Spacer(modifier = Modifier.height(16.dp))
         
-        Surface(elevation = 4.dp) {
+        Surface(elevation = 4.dp, modifier = Modifier.weight(1f)) {
             
             Column(verticalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.padding(16.dp)) {
-                Text(text = "La merveilleuse des femmes",
+                Text(text = textToChange,
                     fontSize = 36.sp
                 )
                 Text(text = "Carolina",
@@ -78,19 +95,21 @@ fun SpaceApp() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Row(verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(16.dp)) {
+        Row(verticalAlignment = Alignment.Bottom,
+            modifier = Modifier.padding(16.dp).weight(1f)) {
 
             Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier.weight(1f).padding(end = 16.dp)
+                onClick = { if(imageId > 1) imageId-- },
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(end = 16.dp)
             ) {
                 Text(text = "Preview")
 
             }
 
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { if(imageId < 3) imageId++ },
                 modifier = Modifier.weight(1f)
             ) {
                 Text(text = "Next")
@@ -100,6 +119,13 @@ fun SpaceApp() {
     }
 
 }
+
+@Composable
+fun ButtonActon(onClicked : ()->Unit) {
+
+
+}
+
 
 @Preview(showBackground = true)
 @Composable
