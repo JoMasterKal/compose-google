@@ -7,5 +7,6 @@ data class Branch (
     @DrawableRes
     val image : Int,
     @StringRes
-    val title : Int? = null
+    val title : Int? = null,
+    val qty : Int
         )
