@@ -49,22 +49,29 @@ fun SpaceApp() {
         1 -> R.drawable.mammy
         2 -> R.drawable.jokalmammy
         3 -> R.drawable.kalongas
+        4 -> R.drawable.eat
         else -> R.drawable.mammy
     }
 
     val textToChange =  when(imageId) {
-        1 -> "Le repos de mon coeur"
-        2 -> "Avec ma belle mere"
-        3 -> "les kalonga, la joie d'etre"
-        else -> "le repos de mon coeur"
+        1 -> "Le repos de mon coeur!"
+        2 -> "Avec ma belle mere!"
+        3 -> "les kalonga, la joie d'etre en famille!"
+        4 -> "En fin de journee, bon appetit!"
+        else -> "le repos de mon coeur!"
     }
 
     Column(verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(16.dp).fillMaxSize()
+        modifier = Modifier
+            .padding(top=32.dp, end = 16.dp, start = 16.dp, bottom = 16.dp)
+            .fillMaxSize()
     ) { 
-        Surface(modifier = Modifier.weight(2f)
-            .border(4.dp, color = Color.Gray, shape = RectangleShape),
+
+        Surface(
+            modifier = Modifier
+                .weight(2f)
+                .border(4.dp, color = Color.Gray,shape = RectangleShape),
             elevation = 4.dp
         ) {
 
@@ -75,25 +82,26 @@ fun SpaceApp() {
             )
         }
         
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(32.dp))
         
-        Surface(elevation = 4.dp, modifier = Modifier.weight(1f)) {
-            
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp),
-                modifier = Modifier.padding(16.dp)) {
-                Text(text = textToChange,
-                    fontSize = 36.sp
-                )
-                Text(text = "Carolina",
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold
-                )
-                
-            }
-            
-        }
+
 
         Spacer(modifier = Modifier.height(16.dp))
+
+        Surface(elevation = 4.dp, modifier = Modifier.weight(1f)) {
+
+            Column(verticalArrangement = Arrangement.spacedBy(16.dp),
+                modifier = Modifier.padding(16.dp).wrapContentSize(Alignment.TopCenter)) {
+                Text(text = textToChange,
+                    fontSize = 24.sp
+                )
+                Text(text = "Carolina",
+                    fontWeight = FontWeight.Bold
+                )
+
+            }
+
+        }
 
         Row(verticalAlignment = Alignment.Bottom,
             modifier = Modifier.padding(16.dp).weight(1f)) {
@@ -109,7 +117,7 @@ fun SpaceApp() {
             }
 
             Button(
-                onClick = { if(imageId < 3) imageId++ },
+                onClick = { if(imageId < 4) imageId++ },
                 modifier = Modifier.weight(1f)
             ) {
                 Text(text = "Next")
