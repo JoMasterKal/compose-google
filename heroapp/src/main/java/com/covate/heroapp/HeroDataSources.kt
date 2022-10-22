@@ -22,8 +22,12 @@ import com.covate.heroapp.ui.theme.Shapes
 @Composable
 fun HeroCard(hero: Hero,modifier: Modifier = Modifier) {
 
-    Card(modifier = modifier
-        .padding(start = 16.dp, end = 16.dp)
+    Card(elevation = 4.dp,modifier = modifier
+        .padding(
+            start = 16.dp,
+            end = 16.dp,
+            top = 8.dp,
+        )
     ) {
         Row(modifier = modifier
             .padding(16.dp)
@@ -31,13 +35,14 @@ fun HeroCard(hero: Hero,modifier: Modifier = Modifier) {
         ) {
 
             HeroInformation(heroName = hero.nameRes,
-                heroDescription = hero.descriptionRes)
-            Spacer(modifier = Modifier.weight(1f))
+                heroDescription = hero.descriptionRes,modifier = modifier.weight(2f))
+            Spacer(modifier = Modifier.width(16.dp))
             Image(
                 modifier = modifier
                     .size(74.dp)
                     .padding(start = 16.dp)
-                    .clip(shape = Shapes.small),
+                    .clip(shape = Shapes.small).weight(1f)
+                ,
                 contentScale = ContentScale.Crop,
                 painter = painterResource(id = hero.imageRes),
                 contentDescription = stringResource(id = hero.descriptionRes),
@@ -56,16 +61,14 @@ fun HeroInformation(
     @StringRes heroDescription : Int,
     modifier: Modifier = Modifier) {
 
-    Column {
+    Column(modifier = modifier) {
         Text(
             text = stringResource(id = heroName),
             style = MaterialTheme.typography.h3,
-            modifier = modifier.padding(top = 8.dp)
         )
         Text(
             text = stringResource(id = heroDescription),
             style = MaterialTheme.typography.body1,
-            modifier = modifier.padding(top = 8.dp)
         )
     }
 
@@ -75,9 +78,9 @@ fun HeroInformation(
 @Composable
 fun CardPreview(){
     val hero = Hero(
-        nameRes = R.string.hero1,
-        descriptionRes = R.string.description1,
-        imageRes = R.drawable.android_superhero1
+        nameRes = R.string.hero4,
+        descriptionRes = R.string.description4,
+        imageRes = R.drawable.android_superhero4
     )
     HeroTheme{
         HeroCard(hero = hero)
