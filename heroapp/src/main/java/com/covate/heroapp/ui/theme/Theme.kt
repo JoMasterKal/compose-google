@@ -26,7 +26,7 @@ private val LightColorPalette = lightColors(
 
 
 @Composable
-fun ComposeGoogleTheme(
+fun HeroTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
