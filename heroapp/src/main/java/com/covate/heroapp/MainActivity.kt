@@ -60,6 +60,7 @@ fun HeroAppBar(modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
             .fillMaxWidth()
+            .background(MaterialTheme.colors.background)
             .height(56.dp),
     ) {
         Text(
