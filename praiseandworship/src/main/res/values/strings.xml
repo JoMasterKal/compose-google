@@ -1,3 +1,148 @@
 <resources>
     <string name="app_name">Praise and Worship</string>
+    <string name="ref1">Esaie 25:1</string>
+    <string name="ref2">Psaume 150:6</string>
+    <string name="ref3">Psaume 28:7</string>
+    <string name="ref4">Psaume 63:4–5</string>
+    <string name="ref5">Psaume 103:1</string>
+    <string name="ref6">Psaume 9:2</string>
+    <string name="ref7">Actes 16:25</string>
+    <string name="ref8">Psaume 42:12</string>
+    <string name="ref9">Psaume 145:3</string>
+    <string name="ref10">Psaume 139:13–14</string>
+    <string name="ref11">Psaume 71:8</string>
+    <string name="ref12">Psaume 34:2</string>
+    <string name="ref13">Apocalypse 5:13</string>
+    <string name="ref14">Colossiens 3:16</string>
+    <string name="ref15">Psaume 105:1</string>
+    <string name="ref16">Psaume 145:1</string>
+    <string name="ref17">Philippiens 4:8</string>
+    <string name="ref118">Romains 14:11</string>
+    <string name="ref19">Ésaïe 12:4</string>
+    <string name="ref20">Jérémie 17:14</string>
+    <string name="ref21">Psaume 108:4</string>
+    <string name="ref22">Psaume 56:5</string>
+    <string name="ref23">Actes 2:46–47</string>
+
+    <string name="desc1">Eternel, tu es mon Dieu;
+je proclamerai ta grandeur, je célébrerai ton nom,
+car tu as accompli des merveilles.
+Tu es parfaitement fidèle aux décisions prises depuis longtemps.
+    </string>
+
+    <string name="desc2">Que tout ce qui respire loue l\’Eternel!
+Louez l’Eternel!
+    </string>
+
+    <string name="desc3">L\’Eternel est ma force et mon bouclier.
+C’est en lui que mon cœur se confie, et je suis secouru.
+Mon cœur est dans la joie,
+et je le loue par mes chants.
+    </string>
+
+    <string name="desc4">Car ta bonté vaut mieux que la vie.
+Mes lèvres célèbrent tes louanges.
+Ainsi je te bénirai toute ma vie,
+je lèverai mes mains en faisant appel à toi.
+    </string>
+
+    <string name="desc5">Bénis l\’Eternel, mon âme!
+Que tout ce qui est en moi bénisse son saint nom!
+    </string>
+
+    <string name="desc6">Je te louerai, Eternel, de tout mon cœur,
+je raconterai toutes tes merveilles.
+    </string>
+
+    <string name="desc7">
+        Vers le milieu de la nuit, Paul et Silas priaient et chantaient les louanges de Dieu,
+        et les prisonniers les écoutaient.
+    </string>
+
+    <string name="desc8">Pourquoi être abattue, mon âme,
+et pourquoi gémir en moi?
+Espère en Dieu,
+car je le louerai encore!
+Il est mon salut et mon Dieu.
+    </string>
+
+    <string name="desc9">L\’Eternel est grand et digne de recevoir toute louange,
+sa grandeur est insondable.
+    </string>
+
+    <string name="desc10">C\’est toi qui as formé mes reins,
+qui m\’as tissé dans le ventre de ma mère.
+Je te loue de ce que je suis une créature si merveilleuse.
+Tes œuvres sont admirables,
+et je le reconnais bien.
+    </string>
+
+    <string name="desc11">Que ma bouche soit remplie de tes louanges,
+que chaque jour elle dise ta beauté!
+    </string>
+
+    <string name="desc12">Je veux bénir l\’Eternel en tout temps:
+sa louange sera toujours dans ma bouche.
+    </string>
+
+    <string name="desc13">Toutes les créatures qui sont dans le ciel, sur la terre, sous la terre,
+        sur la mer, tous les êtres qui s\'y trouvent,
+        je les entendis s’écrier: «A celui qui est assis sur le trône et à l\'Agneau soient la louange,
+        l\'honneur, la gloire et la domination, aux siècles des siècles!»
+    </string>
+
+    <string name="desc14">Que la parole de Christ habite en vous dans toute sa richesse!
+        Instruisez-vous et avertissez-vous les uns les autres en toute sagesse par des psaumes,
+        par des hymnes, par des cantiques spirituels, chantez pour le Seigneur de tout votre cœur
+        sous l\'inspiration de la grâce.
+    </string>
+
+    <string name="desc15">Louez l\’Eternel, faites appel à son nom,
+faites connaître ses hauts faits parmi les peuples!
+    </string>
+
+    <string name="desc16">Je proclamerai ta grandeur, mon Dieu, mon roi,
+et je bénirai ton nom pour toujours et à perpétuité.
+    </string>
+
+    <string name="desc17">Enfin, frères et sœurs, portez vos pensées sur tout ce qui est vrai,
+        tout ce qui est honorable, tout ce qui est juste, tout ce qui est pur, tout ce qui
+        est digne d\'être aimé, tout ce qui mérite l\'approbation, ce qui est synonyme de
+        qualité morale et ce qui est digne de louange.
+    </string>
+
+    <string name="desc18">Car il est écrit: Je suis vivant, dit le Seigneur, chacun pliera le genou
+        devant moi et toute langue rendra gloire à Dieu.
+    </string>
+
+    <string name="desc19">Et vous direz, ce jour-là:
+«Célébrez l\'Eternel, faites appel à lui,
+faites connaître ses actes parmi les peuples,
+rappelez combien son nom est grand!»
+    </string>
+
+
+
+    <string name="desc20">Guéris-moi, Eternel, et je serai guéri!
+Sauve-moi et je serai sauvé,
+car tu es le sujet de ma louange.
+    </string>
+
+    <string name="desc21">Je te louerai parmi les peuples, Eternel,
+je te chanterai parmi les nations.
+    </string>
+
+    <string name="desc22">Je loue Dieu pour sa parole.
+Je me confie en Dieu, je n’ai peur de rien:
+que peuvent me faire des créatures?
+    </string>
+
+    <string name="desc23">Chaque jour, avec persévérance, ils se retrouvaient d’un commun accord au
+        temple; ils rompaient le pain dans les maisons et ils prenaient leur nourriture avec joie
+        et simplicité de cœur. Ils louaient Dieu et avaient la faveur de tout le peuple.
+        Le Seigneur ajoutait chaque jour à l\’Eglise ceux qui étaient sauvés.
+    </string>
+
+
+
 </resources>
