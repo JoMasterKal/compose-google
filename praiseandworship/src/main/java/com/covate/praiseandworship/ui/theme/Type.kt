@@ -20,7 +20,7 @@ val DansingScript = FontFamily(
 val Typography = Typography(
     h1 = TextStyle(
         fontFamily = Montserrat,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Bold,
         fontSize = 30.sp
     ),
     h2 = TextStyle(
