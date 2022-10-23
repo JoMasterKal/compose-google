@@ -29,13 +29,13 @@ val Typography = Typography(
         fontSize = 20.sp
     ),
     h3 = TextStyle(
-        fontFamily = DansingScript,
+        fontFamily = Montserrat,
         fontWeight = FontWeight.Bold,
-        fontSize = 16.sp
+        fontSize = 18.sp
     ),
     body1 = TextStyle(
         fontFamily = DansingScript,
         fontWeight = FontWeight.Normal,
-        fontSize = 14.sp
-    )
+        fontSize = 16.sp
+    ),
 )
