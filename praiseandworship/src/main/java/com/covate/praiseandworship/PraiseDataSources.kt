@@ -35,7 +35,9 @@ fun PraiseCard(praise:Worship, modifier: Modifier = Modifier) {
 
     var expanded by remember { mutableStateOf(false) }
 
-    Card(elevation = 4.dp) {
+    Card(elevation = 4.dp,
+        modifier = Modifier.padding(top = 8.dp)
+    ) {
         Column(modifier = modifier.padding(16.dp)) {
 
             Row(modifier = modifier.padding(bottom = 8.dp)) {
