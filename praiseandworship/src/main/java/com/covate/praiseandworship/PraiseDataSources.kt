@@ -10,9 +10,15 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.outlined.Favorite
+import androidx.compose.material.icons.rounded.Favorite
+import androidx.compose.material.icons.rounded.FavoriteBorder
+import androidx.compose.material.icons.rounded.Share
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -43,6 +49,8 @@ fun PraiseCard(praise:Worship, modifier: Modifier = Modifier) {
             if (expanded){
                 DescriptionText(descript = praise.description)
             }
+
+            StatusButton()
         }
     }
 
@@ -50,7 +58,8 @@ fun PraiseCard(praise:Worship, modifier: Modifier = Modifier) {
 
 @Composable
 fun Ilustration(@DrawableRes image: Int, modifier: Modifier = Modifier) {
-    Image(modifier = modifier.padding(bottom = 8.dp)
+    Image(modifier = modifier
+        .padding(bottom = 8.dp)
         .fillMaxWidth()
         .height(160.dp)
         .clip(shape = Shapes.large),
@@ -67,11 +76,19 @@ fun RefAndTitle(@StringRes title: Int, @StringRes ref: Int,modifier: Modifier = 
         )
 
 
-        Text(
-            text = stringResource(id = ref),
-            style = MaterialTheme.typography.body1,
-            color = MaterialTheme.colors.secondary
-        )
+        Card(elevation = 4.dp,
+            backgroundColor = MaterialTheme.colors.secondary
+        ) {
+            Text(
+                text = stringResource(id = ref),
+                style = MaterialTheme.typography.body1,
+                color = MaterialTheme.colors.surface,
+                modifier = Modifier
+                    .padding(8.dp)
+                    .background(color = Color.Transparent)
+            )
+        }
+
     }
 }
 
@@ -97,6 +114,69 @@ fun DescriptionText(@StringRes descript : Int, modifier: Modifier = Modifier) {
         textAlign = TextAlign.Justify,
         color = MaterialTheme.colors.secondary
     )
+}
+
+@Composable
+fun StatusButton() {
+    var liked by remember { mutableStateOf(false) }
+    var likeCount by remember{ mutableStateOf(0)}
+    Row(modifier = Modifier.padding(top = 8.dp)) {
+        LikeButton(modifier = Modifier.weight(1f), liked = liked,likeCount){
+            if(liked){
+                liked = false
+                likeCount--
+            }else {
+                liked = true
+                likeCount++
+            }
+        }
+        ShareButton (modifier = Modifier.weight(1f)){
+            liked = !liked
+        }
+    }
+}
+
+@Composable
+fun LikeButton(
+    modifier: Modifier = Modifier,
+    liked: Boolean,
+    likedCount: Int,
+    onClick: () -> Unit
+){
+    IconButton(onClick =  onClick) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Icon(
+
+                imageVector = if (liked) Icons.Rounded.Favorite else Icons.Rounded.FavoriteBorder,
+                tint = if(liked) Color.Red  else MaterialTheme.colors.secondary,
+                contentDescription = stringResource(R.string.expand_button_content_description)
+            )
+
+            Text(text = likedCount.toString(),
+                style = MaterialTheme.typography.body2
+            )
+        }
+    }
+}
+
+@Composable
+fun ShareButton(
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
+){
+    IconButton(onClick = onClick) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Icon(
+                imageVector =  Icons.Rounded.Share,
+                tint = MaterialTheme.colors.secondary,
+                contentDescription = stringResource(R.string.expand_button_content_description)
+            )
+
+            Text(text = stringResource(R.string.share_text),
+                style = MaterialTheme.typography.body2
+            )
+        }
+    }
 }
 
 @Preview
