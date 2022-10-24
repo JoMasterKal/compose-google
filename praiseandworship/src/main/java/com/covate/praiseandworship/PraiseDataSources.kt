@@ -34,11 +34,14 @@ import com.covate.praiseandworship.ui.theme.primaryColor
 fun PraiseCard(praise: Worship, modifier: Modifier = Modifier) {
 
     var expanded by remember { mutableStateOf(false) }
+    var liked by remember { mutableStateOf(false) }
+    var likedCount by remember { mutableStateOf(0) }
+
 
     Card(
         elevation = 4.dp,
         modifier = Modifier
-            .padding(top = 8.dp, start = 8.dp, end = 8.dp)
+            .padding(bottom = 8.dp, start = 8.dp, end = 8.dp)
     ) {
         Column(modifier = modifier.padding(16.dp)) {
 
@@ -54,7 +57,10 @@ fun PraiseCard(praise: Worship, modifier: Modifier = Modifier) {
                 DescriptionText(descript = praise.description)
             }
 
-            StatusButton()
+            StatusButton(liked = liked, likedCount = likedCount){
+                liked = !liked
+                if(liked) likedCount++ else likedCount--
+            }
         }
     }
 
@@ -126,28 +132,16 @@ fun DescriptionText(@StringRes descript: Int, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun StatusButton() {
-    var liked by remember { mutableStateOf(false) }
-    var likeCount by remember { mutableStateOf(0) }
+fun StatusButton(liked: Boolean,likedCount: Int,action:()->Unit) {
+
     Row(modifier = Modifier.padding(top = 8.dp)) {
-        LikeButton(modifier = Modifier.weight(1f), liked = liked, likeCount) {
-            if (liked) {
-                liked = false
-                likeCount--
-            } else {
-                liked = true
-                likeCount++
-            }
-        }
-        ShareButton(modifier = Modifier.weight(1f)) {
-            liked = !liked
-        }
+        LikeButton(liked = liked, likedCount= likedCount, onClick = action)
+        ShareButton(onClick = action)
     }
 }
 
 @Composable
 fun LikeButton(
-    modifier: Modifier = Modifier,
     liked: Boolean,
     likedCount: Int,
     onClick: () -> Unit
@@ -171,7 +165,6 @@ fun LikeButton(
 
 @Composable
 fun ShareButton(
-    modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {
     IconButton(onClick = onClick) {
