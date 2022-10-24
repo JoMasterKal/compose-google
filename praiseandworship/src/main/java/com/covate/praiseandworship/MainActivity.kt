@@ -42,7 +42,6 @@ fun ListWorship(modifier: Modifier = Modifier) {
         LazyColumn(
             modifier
                 .padding(it)
-                .background(MaterialTheme.colors.background)
         ) {
             items(WorshipRepository.praises){
                 PraiseCard(praise = it)
